@@ -1,0 +1,70 @@
+{
+    "HERO": [
+        {
+            "id": 0,
+            "name": "Le Berserker",
+            "stats": {
+                "PV": 200,
+                "attaque": 90,
+                "defense": 15,
+                "chance": 70,
+                "PA": 2
+            },
+            "capacite": {
+                "attaque": 1,
+                "attaque-special": 10,
+                "protection": 15
+            },
+            "equipements": {
+                "arme": "",
+                "armure": "",
+                "bouclier": ""
+            },
+            "image": "https://pbs.twimg.com/media/Es0a0hCXUAA097_?format=jpg&name=small"
+        },
+        {
+            "id": 1,
+            "name": "Guerrier Fragile",
+            "stats": {
+                "PV": "7",
+                "attaque": "70",
+                "defense": "25",
+                "chance": "12",
+                "PA": "5"
+            },
+            "capacite": {
+                "attaque": "",
+                "attaque-special": "",
+                "protection": ""
+            },
+            "equipements": {
+                "arme": "",
+                "armure": "",
+                "bouclier": ""
+            },
+            "image": ""
+        },
+        {
+            "id": "",
+            "name": "",
+            "stats": {
+                "PV": "",
+                "attaque": "",
+                "defense": "",
+                "chance": "",
+                "PA": ""
+            },
+            "capacite": {
+                "attaque": "",
+                "attaque-special": "",
+                "protection": ""
+            },
+            "equipements": {
+                "arme": "",
+                "armure": "",
+                "bouclier": ""
+            },
+            "image": ""
+        }
+    ]
+}

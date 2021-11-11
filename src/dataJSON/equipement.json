@@ -1,0 +1,107 @@
+{
+    "ARME": [
+        {
+            "id": 1,
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        },
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        },
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        }
+    ],
+    "ARMURE": [
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        },
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        },
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        }
+    ],
+    "BOUCLIER": [
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        },
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        },
+        {
+            "id": "",
+            "name": "",
+            "image": "",
+            "bonustat": {
+                "attaque": "",
+                "defense": "",
+                "PV": "",
+                "chance": ""
+            }
+        }
+    ]
+}
