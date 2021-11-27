@@ -23,29 +23,31 @@ export class EntitiesService {
 
   // SELECT ALL
   async getAllHeroes(): Promise<Heroes[]> {
-    return this.heroesModel.find().exec();
+    const selectAllHeroes = await this.heroesModel.find();
+    return selectAllHeroes;
   }
 
   // SELECT ONE
   async getOneHeroe(id): Promise<Heroes> {
-    return this.heroesModel.findOne({ _id: id }).exec();
+    const selectedHeroe = await this.heroesModel.findOne({ _id: id });
+    return selectedHeroe;
   }
 
   // POST
   async createHeroe(createHeroeDto: CreateHeroeDto): Promise<Heroes> {
-    const createdHeroe = new this.heroesModel(createHeroeDto);
+    const createdHeroe = await new this.heroesModel(createHeroeDto);
     return createdHeroe.save();
   }
 
   // UPDATE
   async updateHeroe(id, body: CreateHeroeDto): Promise<Heroes> {
-    const updatedHeroe = new this.heroesModel();
-    return updatedHeroe.updateOne({ _id: id }, body);
+    return this.heroesModel.findByIdAndUpdate({ _id: id }, body);
   }
 
   // DELETE
   async deleteHeroe(id): Promise<any> {
-    return this.heroesModel.deleteOne({ _id: id }).exec();
+    const deletedHeroe = await this.heroesModel.deleteOne({ _id: id });
+    return deletedHeroe;
   }
 
   /* -------------------------------------------------------------- */
@@ -54,12 +56,14 @@ export class EntitiesService {
 
   // SELECT ALL
   async getAllMonsters(): Promise<Monsters[]> {
-    return this.monstersModel.find().exec();
+    const selectAllMonsters = await this.monstersModel.find();
+    return selectAllMonsters;
   }
 
   // SELECT ONE
   async getOneMonster(id): Promise<Monsters> {
-    return this.monstersModel.findOne({ _id: id }).exec();
+    const selectedMonster = this.monstersModel.findOne({ _id: id });
+    return selectedMonster;
   }
 
   // POST
@@ -69,13 +73,14 @@ export class EntitiesService {
   }
 
   // UPDATE
-  // async updateMonster(id, body: CreateMonsterDto): Promise<Monsters> {
-  //   return this.monstersModel.updateOne({ _id: id }, body);
-  // }
+  async updateMonster(id, body: CreateMonsterDto): Promise<Monsters> {
+    return this.monstersModel.findByIdAndUpdate({ _id: id }, body);
+  }
 
   // DELETE
   async deleteMonster(id): Promise<any> {
-    return this.monstersModel.deleteOne({ _id: id }).exec();
+    const deletedMonster = this.monstersModel.deleteOne({ _id: id });
+    return deletedMonster;
   }
 
   /* ----------------------------------------------------------------- */
@@ -84,12 +89,14 @@ export class EntitiesService {
 
   // SELECT ALL
   async getAllEquipements(): Promise<Equipements[]> {
-    return this.equipementsModel.find().exec();
+    const selectAllEquipements = this.equipementsModel.find();
+    return selectAllEquipements;
   }
 
   // SELECT ONE
   async getOneEquipement(id): Promise<Equipements> {
-    return this.equipementsModel.findOne({ _id: id }).exec();
+    const selectedEquipement = this.equipementsModel.findOne({ _id: id });
+    return selectedEquipement;
   }
 
   // POST
@@ -101,12 +108,13 @@ export class EntitiesService {
   }
 
   // UPDATE
-  // async updateEquipement(id, body: CreateEquipementDto): Promise<Equipements> {
-  //   return this.equipementsModel.updateOne({ _id: id }, body);
-  // }
+  async updateEquipement(id, body: CreateEquipementDto): Promise<Equipements> {
+    return this.equipementsModel.findByIdAndUpdate({ _id: id }, body);
+  }
 
   // DELETE
   async deleteEquipement(id): Promise<any> {
-    return this.equipementsModel.deleteOne({ _id: id }).exec();
+    const deletedEquipement = this.equipementsModel.deleteOne({ _id: id });
+    return deletedEquipement;
   }
 }

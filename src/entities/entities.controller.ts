@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  NotFoundException,
   Param,
   Post,
   Put,
@@ -23,37 +24,69 @@ export class EntitiesController {
   /* ------------------------------------------------------ */
 
   /* -- SELECT ALL -- */
-  @Get('/heros')
+  @Get('/heroes')
   getAllHeroes(): any {
-    return this.entitiesService.getAllHeroes();
+    const getAllHeroes = this.entitiesService.getAllHeroes();
+
+    if (!getAllHeroes) {
+      throw new NotFoundException();
+    }
+
+    return getAllHeroes;
   }
 
   /* -- SELECT ONE -- */
-  @Get('/heros/:id')
+  @Get('/heroes/:id')
   getOneHeroe(@Param() paramID: any) {
-    console.log(paramID);
-    return this.entitiesService.getOneHeroe(paramID.id);
+    const getOneHeroe = this.entitiesService.getOneHeroe(paramID.id);
+
+    if (!getOneHeroe) {
+      throw new NotFoundException();
+    }
+
+    return getOneHeroe;
   }
 
   /* -- POST -- */
-  @Post('/heros/new')
+  @Post('/heroes/new')
   createHeroe(@Body() newHeroe: CreateHeroeDto): any {
-    return this.entitiesService.createHeroe(newHeroe);
+    const createHeroe = this.entitiesService.createHeroe(newHeroe);
+
+    if (!createHeroe) {
+      throw new NotFoundException();
+    }
+
+    return createHeroe;
   }
 
   /* -- UPDATE -- */
-  @Put('/heros/:id')
+  @Put('/heroes/:id')
   updateHeroe(
     @Param() paramID: any,
     @Body() updatedHeroe: CreateHeroeDto,
   ): any {
-    return this.entitiesService.updateHeroe(paramID.id, updatedHeroe);
+    const updateHeroe = this.entitiesService.updateHeroe(
+      paramID.id,
+      updatedHeroe,
+    );
+
+    if (!updateHeroe) {
+      throw new NotFoundException();
+    }
+
+    return updateHeroe;
   }
 
   /* -- DELETE -- */
-  @Delete('/heros/:id')
+  @Delete('/heroes/:id')
   deleteHeroe(@Param() paramID: any): any {
-    return this.entitiesService.deleteHeroe(paramID.id);
+    const deleteHeroe = this.entitiesService.deleteHeroe(paramID.id);
+
+    if (!deleteHeroe) {
+      throw new NotFoundException();
+    }
+
+    return deleteHeroe;
   }
 
   /* -------------------------------------------------------- */
@@ -61,60 +94,139 @@ export class EntitiesController {
   /* -------------------------------------------------------- */
 
   /* -- SELECT ALL -- */
-  // @Get('/monsters')
-  // getAllMonsters(): any {
-  //   return this.entitiesService.getAllMonsters();
-  // }
+  @Get('/monsters')
+  getAllMonsters(): any {
+    const getAllMonsters = this.entitiesService.getAllMonsters();
 
-  // /* -- POST -- */
-  // @Post('/monsters/new')
-  // createMonster(@Body() newMonster: CreateMonsterDto): any {
-  //   return this.entitiesService.createMonster(newMonster);
-  // }
+    if (!getAllMonsters) {
+      throw new NotFoundException();
+    }
 
-  // /* -- UPDATE -- */
-  // @Put('/monsters/:id')
-  // updateMonster(
-  //   @Param() paramID: any,
-  //   @Body() updatedMonster: CreateMonsterDto,
-  // ): any {
-  //   return this.entitiesService.updateMonster(paramID.id, updatedMonster);
-  // }
+    return getAllMonsters;
+  }
 
-  // /* -- DELETE -- */
-  // @Delete('/monsters/:id')
-  // deleteMonster(@Param() paramID: any): any {
-  //   return this.entitiesService.deleteMonster(paramID.id);
-  // }
+  /* -- SELECT ONE -- */
+  @Get('/monsters/:id')
+  getOneMonster(@Param() paramID: any) {
+    const getOneMonster = this.entitiesService.getOneMonster(paramID.id);
+
+    if (!getOneMonster) {
+      throw new NotFoundException();
+    }
+
+    return getOneMonster;
+  }
+
+  /* -- POST -- */
+  @Post('/monsters/new')
+  createMonster(@Body() newMonster: CreateMonsterDto): any {
+    const createMonster = this.entitiesService.createMonster(newMonster);
+
+    if (!createMonster) {
+      throw new NotFoundException();
+    }
+
+    return createMonster;
+  }
+
+  /* -- UPDATE -- */
+  @Put('/monsters/:id')
+  updateMonster(
+    @Param() paramID: any,
+    @Body() updatedMonster: CreateMonsterDto,
+  ): any {
+    const updateMonster = this.entitiesService.updateMonster(
+      paramID.id,
+      updatedMonster,
+    );
+
+    if (!updateMonster) {
+      throw new NotFoundException();
+    }
+
+    return updateMonster;
+  }
+
+  /* -- DELETE -- */
+  @Delete('/monsters/:id')
+  deleteMonster(@Param() paramID: any): any {
+    const deleteMonster = this.entitiesService.deleteMonster(paramID.id);
+
+    if (!deleteMonster) {
+      throw new NotFoundException();
+    }
+
+    return deleteMonster;
+  }
 
   // /* ----------------------------------------------------------- */
   // /* -------------------- EQUIPEMENTS ROUTE -------------------- */
   // /* ----------------------------------------------------------- */
 
-  // /* -- SELECT ALL -- */
-  // @Get('/equipements')
-  // getAllEquipements(): any {
-  //   return this.entitiesService.getAllEquipements();
-  // }
+  /* -- SELECT ALL -- */
+  @Get('/equipements')
+  getAllEquipements(): any {
+    const getAllEquipements = this.entitiesService.getAllEquipements();
 
-  // /* -- POST -- */
-  // @Post('/equipements/new')
-  // createEquipement(@Body() newEquipement: CreateEquipementDto): any {
-  //   return this.entitiesService.createEquipement(newEquipement);
-  // }
+    if (!getAllEquipements) {
+      throw new NotFoundException();
+    }
 
-  // /* -- UPDATE -- */
-  // @Put('/equipements/:id')
-  // updateEquipement(
-  //   @Param() paramID: any,
-  //   @Body() updatedEquipement: CreateEquipementDto,
-  // ): any {
-  //   return this.entitiesService.updateEquipement(paramID.id, updatedEquipement);
-  // }
+    return getAllEquipements;
+  }
 
-  // /* -- DELETE -- */
-  // @Delete('/equipements/:id')
-  // deleteEquipement(@Param() paramID: any): any {
-  //   return this.entitiesService.deleteEquipement(paramID.id);
-  // }
+  /* -- SELECT ONE -- */
+  @Get('/equipements/:id')
+  getOneEquipement(@Param() paramID: any) {
+    const getOneEquipement = this.entitiesService.getOneEquipement(paramID.id);
+
+    if (!getOneEquipement) {
+      throw new NotFoundException();
+    }
+
+    return getOneEquipement;
+  }
+
+  /* -- POST -- */
+  @Post('/equipements/new')
+  createEquipement(@Body() newEquipement: CreateEquipementDto): any {
+    const createEquipement =
+      this.entitiesService.createEquipement(newEquipement);
+
+    if (!createEquipement) {
+      throw new NotFoundException();
+    }
+
+    return createEquipement;
+  }
+
+  /* -- UPDATE -- */
+  @Put('/equipements/:id')
+  updateEquipement(
+    @Param() paramID: any,
+    @Body() updatedEquipement: CreateEquipementDto,
+  ): any {
+    const updateEquipement = this.entitiesService.updateEquipement(
+      paramID.id,
+      updatedEquipement,
+    );
+
+    if (!updateEquipement) {
+      throw new NotFoundException();
+    }
+
+    return updateEquipement;
+  }
+
+  /* -- DELETE -- */
+  @Delete('/equipements/:id')
+  deleteEquipement(@Param() paramID: any): any {
+    const deleteEquipement = this.entitiesService.deleteEquipement(paramID.id);
+
+    if (!deleteEquipement) {
+      throw new NotFoundException();
+    }
+
+    return deleteEquipement;
+  }
 }
