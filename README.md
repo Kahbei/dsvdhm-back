@@ -17,6 +17,8 @@ Cette partie concerne uniquement la partie Back-End soit la partie utilisant Nes
 
 Une fois le projet récupéré, veuillez lancer `yarn install`
 
+Vous allez devoir mettre en place une base de donnée de type **MongoDB**.
+
 Avant de pouvoir lancer l'application, vous allez devoir un fichier **.env** avec à l'intérieur : ``MONGODB_DATABASE=yourMongoDB_URI``
 
 `yourMongoDB_URI` devant bien évidemment être remplacé par votre mongodb URI.
