@@ -1,5 +1,12 @@
 import { Type } from 'class-transformer';
-import { IsArray, IsNotEmpty, IsNumber, ValidateNested } from 'class-validator';
+import {
+  IsArray,
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+  isString,
+  ValidateNested,
+} from 'class-validator';
 
 class StatsHeroe {
   @IsNumber()
@@ -49,6 +56,8 @@ class EquipementHeroe {
 }
 
 export class CreateHeroeDto {
+  @IsString()
+  @IsNotEmpty()
   name: string;
 
   @ValidateNested()
@@ -62,7 +71,6 @@ export class CreateHeroeDto {
   capacite: CapaciteHeroe;
 
   @ValidateNested()
-  @IsNotEmpty()
   @Type(() => EquipementHeroe)
   equipement: EquipementHeroe;
 }

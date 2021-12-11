@@ -49,6 +49,7 @@ export class EntitiesController {
 
   /* -- POST -- */
   @Post('/heroes/new')
+  @UsePipes(new ValidationPipe())
   createHeroe(@Body() newHeroe: CreateHeroeDto): any {
     const createHeroe = this.entitiesService.createHeroe(newHeroe);
 
@@ -61,6 +62,7 @@ export class EntitiesController {
 
   /* -- UPDATE -- */
   @Put('/heroes/:id')
+  @UsePipes(new ValidationPipe())
   updateHeroe(
     @Param() paramID: any,
     @Body() updatedHeroe: CreateHeroeDto,
@@ -119,6 +121,7 @@ export class EntitiesController {
 
   /* -- POST -- */
   @Post('/monsters/new')
+  @UsePipes(new ValidationPipe())
   createMonster(@Body() newMonster: CreateMonsterDto): any {
     const createMonster = this.entitiesService.createMonster(newMonster);
 
@@ -131,6 +134,7 @@ export class EntitiesController {
 
   /* -- UPDATE -- */
   @Put('/monsters/:id')
+  @UsePipes(new ValidationPipe())
   updateMonster(
     @Param() paramID: any,
     @Body() updatedMonster: CreateMonsterDto,
@@ -189,6 +193,7 @@ export class EntitiesController {
 
   /* -- POST -- */
   @Post('/equipements/new')
+  @UsePipes(new ValidationPipe())
   createEquipement(@Body() newEquipement: CreateEquipementDto): any {
     const createEquipement =
       this.entitiesService.createEquipement(newEquipement);
@@ -202,6 +207,7 @@ export class EntitiesController {
 
   /* -- UPDATE -- */
   @Put('/equipements/:id')
+  @UsePipes(new ValidationPipe())
   updateEquipement(
     @Param() paramID: any,
     @Body() updatedEquipement: CreateEquipementDto,

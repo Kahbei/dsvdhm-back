@@ -48,7 +48,6 @@ export class CreateMonsterDto {
   name: string;
 
   @IsString()
-  @IsNotEmpty()
   type: string;
 
   @ValidateNested()
