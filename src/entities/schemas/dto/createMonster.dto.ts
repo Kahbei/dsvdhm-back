@@ -47,9 +47,6 @@ export class CreateMonsterDto {
   @IsNotEmpty()
   name: string;
 
-  @IsString()
-  type: string;
-
   @ValidateNested()
   @IsNotEmpty()
   @Type(() => StatsMonster)

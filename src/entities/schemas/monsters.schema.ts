@@ -39,9 +39,6 @@ export class Monsters {
   name: string;
 
   @Prop()
-  type: string;
-
-  @Prop()
   stats: StatsMonster;
 
   @Prop()
